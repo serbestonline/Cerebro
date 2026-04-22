@@ -1,0 +1,17 @@
+# Course data (personal — not part of the ecosystem)
+courses/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Anki media
+*.apkg
+
+# Video files (too large for git)
+*.m4v
+*.mp4
+*.mov
+
+# Old skill format
+*.skill

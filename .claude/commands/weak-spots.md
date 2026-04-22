@@ -1,0 +1,1 @@
+../../skills/weak-spot-hunter.md

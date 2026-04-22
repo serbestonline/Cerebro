@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture 1 — Introduction to Cognitive and Clinical Neuropsychology</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; }
+  svg.markmap { width: 100%; height: 100vh; background: #0d1117; }
+
+  #tooltip {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    max-width: 440px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    font-size: 14px;
+    line-height: 1.7;
+    color: #e6edf3;
+    pointer-events: none;
+  }
+
+  #tooltip .tt-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background: #23883833;
+    color: #3fb950;
+  }
+
+  #tooltip .tt-title {
+    font-weight: 600;
+    color: #f0f6fc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #21262d;
+  }
+
+  #tooltip .tt-body {
+    color: #9da5b0;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
+</head>
+<body>
+
+<div id="tooltip"></div>
+
+<div class="markmap">
+<script type="text/template">
+---
+markmap:
+  colorFreezeLevel: 3
+  maxWidth: 420
+  initialExpandLevel: 2
+---
+
+# L1 — Intro to Cognitive & Clinical Neuropsychology
+
+## Philosophy of Mind
+
+### Dualism
+
+#### [SB] What is dualism?
+- Mind and body are fundamentally separate substances — the mind (res cogitans) is non-physical, the body (res extensa) is physical
+
+#### [SC] Descartes: res cogitans = ??? · res extensa = ???
+- res cogitans = mind · res extensa = body
+
+#### [SB] What is the interaction problem?
+- If mind is non-physical and body is physical, how can one causally affect the other? No satisfactory mechanism has been proposed
+
+### Materialism
+
+#### [SB] What is materialism?
+- Only physical matter exists — mental states are identical to or emerge from brain states, there is no separate mind substance
+
+#### [SC] Four arguments for materialism: ??? · ??? · ??? · ???
+- Neural causation · Penfield stimulation · Cross-species similarity · AI replication
+
+#### [SB] How does Penfield support materialism?
+- Electrical brain stimulation directly produced or arrested speech — a purely physical intervention causing mental effects
+
+## Historical Approaches
+
+### Psychometrics
+
+#### [SB] What is psychometrics?
+- Measuring mental abilities through standardized tests — focuses on individual differences rather than neural mechanisms
+
+### Behaviorism
+
+#### [SB] What is behaviorism?
+- Only observable behavior is scientifically valid — internal mental states are rejected as objects of study
+
+#### [SC] Behaviorism founders: ??? (classical) · ??? (radical)
+- Watson (classical) · Skinner (radical)
+
+### Lashley
+
+#### [SC] Lashley's two principles: ??? · ???
+- Mass action · Equipotentiality
+
+#### [SB] What is equipotentiality?
+- Any brain region can take over any cognitive function — later disproven by evidence for functional specialization
+
+#### [SB] What is mass action?
+- Deficit severity depends on total lesion size, not location — later disproven by localized function evidence
+
+## Modularity — Fodor
+
+### Core Properties
+
+#### [SC] Fodor's 7 module properties
+- Domain-specific · Encapsulated · Mandatory · Fast · Simple output · Limited conscious access · Fixed neural architecture
+
+#### [SB] What is domain-specificity?
+- A module processes only one type of input — e.g., face module responds to faces but not houses
+
+#### [SB] What is encapsulation?
+- A module's processing cannot be influenced by higher-level knowledge or other systems
+
+#### [SB] Why do optical illusions persist even when you know they are fake?
+- Visual modules are encapsulated — higher-level knowledge cannot penetrate the module's processing
+
+### Evidence For
+
+#### [SB] What are additive effects?
+- Two factors affect different processing stages independently — their effects on RT simply add up, evidence for separate modules
+
+#### [SB] What are interactive effects?
+- Two factors affect the same processing stage — one factor's effect depends on the other's level, suggesting a shared module
+
+### Alternatives
+
+#### [SB] What is neural reuse?
+- Brain regions participate in multiple cognitive functions rather than being dedicated to one — challenges strict modularity
+
+## Methods
+
+### Dissociations
+
+#### [SB] What is a dissociation?
+- Patient impaired on task X but normal on task Y — suggests separable cognitive systems
+
+#### [SB] What is a double dissociation?
+- Patient A: X impaired, Y normal. Patient B: Y impaired, X normal — strongest evidence for independent systems
+
+#### [SB] Why is double dissociation stronger than single?
+- Single dissociation could reflect task difficulty. Double dissociation rules this out — both tasks fail selectively in different patients
+
+### Assumptions
+
+#### [SB] What is the universality assumption?
+- All normal adult brains share the same cognitive architecture — justifies generalizing from single-case studies
+
+### Neuroimaging
+
+#### [SB] Key limitation of fMRI?
+- Correlation not causation — activation during a task does not prove the region is necessary for that function
+
+#### [SB] What is structure-to-function mapping?
+- Linking specific brain regions to specific cognitive functions — modern evidence shows this is often many-to-many
+
+</script>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const contexts = {
+    "L1 — Intro to Cognitive & Clinical Neuropsychology": "This lecture lays the theoretical foundation for the entire course. It moves from philosophy (what IS the mind?) through historical failed attempts, to the modern modular framework and the methods used to test it. Everything that follows in later lectures — aphasia, amnesia, agnosia — builds on these concepts.",
+
+    "Philosophy of Mind": "What is the relationship between mind and body? Two positions — dualism and materialism — frame all neuropsychological reasoning. The shift from dualism to materialism is what made a science of the mind possible.",
+
+    "Dualism": "Descartes proposed mind and body are separate substances. This raises the core question: if they are different kinds of stuff, how do they interact? This unsolved interaction problem motivates the shift to materialism.",
+
+    "Materialism": "The dominant modern position. Mental states ARE brain states. Four independent lines of evidence converge on this conclusion — from direct brain stimulation to AI. This is the philosophical foundation that allows neuropsychology to exist as a science.",
+
+    "Historical Approaches": "Before cognitive neuropsychology emerged, three traditions tried to study the mind. Each contributed something but ultimately proved insufficient — setting the stage for Fodor's modular approach.",
+
+    "Psychometrics": "The measurement tradition. Useful for quantifying abilities but tells us nothing about underlying cognitive architecture or neural mechanisms.",
+
+    "Behaviorism": "The radical rejection of internal mental life. Dominated psychology for decades but collapsed when cognitive science showed internal representations are real and necessary for explaining behavior.",
+
+    "Lashley": "Lashley's lesion studies in rats led to two principles — both later proven wrong. His failure to find localized function was due to testing the wrong functions (maze running uses distributed processing). The error pushed the field to develop better methods.",
+
+    "Modularity — Fodor": "The theoretical backbone of cognitive neuropsychology. If the mind is composed of independent, specialized modules, then brain damage should produce selective deficits — one module breaks, others survive. This is exactly what we observe in patients.",
+
+    "Core Properties": "Fodor defined 7 properties that a true module should have. Not all properties need to be present — these are criteria, not strict requirements. The two most important for neuropsychology are domain-specificity and encapsulation.",
+
+    "Evidence For": "Experimental evidence for modularity comes from additive factors logic (Sanders, 1982). If two manipulations affect different stages, their effects add up (additive). If they affect the same stage, they interact. This lets you test whether processing stages are truly independent.",
+
+    "Alternatives": "Strict modularity has been challenged. Neural reuse theory shows brain regions are not dedicated to single functions — the same tissue participates in multiple tasks. Reality is somewhere between Fodor's strict modules and Lashley's complete equipotentiality.",
+
+    "Methods": "How do we figure out the mind's architecture? Cognitive neuropsychology uses lesion-based logic: if damaging region X breaks function A but spares function B, then A and B are separable. The gold standard is the double dissociation.",
+
+    "Dissociations": "The core inferential tool. A single dissociation is suggestive but weak. A double dissociation is the strongest evidence for independent cognitive systems — it rules out the alternative explanation that one task is simply harder.",
+
+    "Assumptions": "The entire enterprise of single-case neuropsychology rests on one critical assumption: that all normal brains are wired the same way. Without universality, you cannot generalize from one patient to the population.",
+
+    "Neuroimaging": "fMRI is powerful but fundamentally limited — it shows correlation, not causation. A region lighting up during a task does not mean that region is necessary. Lesion studies remain essential because they test necessity directly."
+  };
+
+  const tooltip = document.getElementById('tooltip');
+
+  function showTooltip(e, title, body) {
+    tooltip.innerHTML = `
+      <div class="tt-label">CONTEXT</div>
+      <div class="tt-title">${title}</div>
+      <div class="tt-body">${body}</div>
+    `;
+    tooltip.style.display = 'block';
+    positionTooltip(e);
+  }
+
+  function positionTooltip(e) {
+    const pad = 16;
+    const tt = tooltip;
+    let x = e.clientX + pad;
+    let y = e.clientY + pad;
+
+    tt.style.left = '0px';
+    tt.style.top = '0px';
+
+    requestAnimationFrame(() => {
+      const rect = tt.getBoundingClientRect();
+      if (x + rect.width > window.innerWidth - pad) x = e.clientX - rect.width - pad;
+      if (y + rect.height > window.innerHeight - pad) y = e.clientY - rect.height - pad;
+      if (x < pad) x = pad;
+      if (y < pad) y = pad;
+      tt.style.left = x + 'px';
+      tt.style.top = y + 'px';
+    });
+  }
+
+  function hideTooltip() {
+    tooltip.style.display = 'none';
+  }
+
+  function attachListeners() {
+    const foreignObjects = document.querySelectorAll('svg.markmap foreignObject');
+    if (foreignObjects.length === 0) return false;
+
+    foreignObjects.forEach(fo => {
+      if (fo.dataset.contextBound) return;
+      fo.dataset.contextBound = 'true';
+
+      const textEl = fo.querySelector('div, span');
+      if (!textEl) return;
+      const raw = textEl.textContent.trim();
+
+      // Skip flashcard nodes (start with [SB] or [SC]) and answer leaves
+      if (raw.startsWith('[SB]') || raw.startsWith('[SC]')) return;
+
+      // Check if this node text matches a context key
+      let matchedKey = null;
+      let matchedCtx = null;
+      for (const [key, val] of Object.entries(contexts)) {
+        if (raw.includes(key) || key.includes(raw)) {
+          matchedKey = key;
+          matchedCtx = val;
+          break;
+        }
+      }
+
+      if (!matchedCtx) return;
+
+      fo.style.cursor = 'help';
+      fo.addEventListener('mouseenter', e => showTooltip(e, matchedKey, matchedCtx));
+      fo.addEventListener('mousemove', e => positionTooltip(e));
+      fo.addEventListener('mouseleave', hideTooltip);
+    });
+
+    return true;
+  }
+
+  // Observe DOM for markmap render, then attach
+  const observer = new MutationObserver(() => {
+    if (attachListeners()) {
+      // Keep observing for re-renders (expand/collapse triggers re-render)
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+
+</body>
+</html>

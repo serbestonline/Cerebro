@@ -1,0 +1,1 @@
+../../skills/essay-scaffolder.md

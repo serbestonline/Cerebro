@@ -1,0 +1,392 @@
+/* --- GENEL AYARLAR --- */
+.card {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: #1e293b; 
+  background-color: #F0F2F5;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.card.nightMode {
+  background-color: #F0F2F5 !important;
+  color: #1e293b !important;
+}
+
+.flashcard-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+b, strong {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+/* --- CLOZE (FILL-IN-THE-BLANK) STYLES --- */
+.cloze {
+  color: #1d4ed8; 
+  background-color: #f1f5f9; 
+  border-bottom: 4px solid #60a5fa; 
+  font-weight: 700;
+  padding: 4px 16px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin: 0 4px;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.cloze[data-cloze]::before {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.back-side .cloze {
+  color: #065f46; 
+  background-color: #d1fae5; 
+  border-bottom: 4px solid #10b981; 
+  border-radius: 12px; 
+}
+
+.back-side .cloze::before {
+  content: "✓ ";
+  font-weight: 900;
+  color: #059669;
+  margin-right: 4px;
+}
+
+/* --- BENTO METADATA BADGES --- */
+.metadata-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.icon { width: 16px; height: 16px; }
+
+.badge-blue { background-color: #ffffff; border: 1px solid #e2e8f0; color: #475569; }
+.badge-blue .icon { color: #3b82f6; }
+
+.badge-purple { background-color: #ffffff; border: 1px solid #e2e8f0; color: #475569; }
+.badge-purple .icon { color: #a855f7; }
+
+.badge-gray { background-color: #f8fafc; border: 1px solid #e2e8f0; color: #475569; }
+.badge-gray .icon { color: #64748b; }
+
+.push-right { margin-left: auto; }
+
+/* --- ANA KART (BENTO BOX) --- */
+.bento-card {
+  background-color: #ffffff;
+  padding: 40px 40px 40px 64px; 
+  border-radius: 32px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.mb-0 { margin-bottom: 0px !important; }
+.mt-4 { margin-top: 24px !important; }
+
+.left-gradient-border.expanded {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px; 
+  height: 100%;
+  background: linear-gradient(to bottom, #818cf8, #3b82f6);
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-gradient-border-success.expanded {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px; 
+  height: 100%;
+  background: linear-gradient(to bottom, #34d399, #10b981);
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-text {
+  transform: rotate(-90deg);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.question-content {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #1e293b;
+}
+
+.text-left { text-align: left; }
+
+/* --- GRID AND INTERACTION AREA --- */
+.interaction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.input-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 32px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.dummy-textarea {
+  flex-grow: 1;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 18px;
+  color: #334155;
+  resize: none;
+  outline: none;
+  min-height: 140px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.dummy-textarea:focus {
+  background: #ffffff;
+  border-color: #bfdbfe;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* --- IMAGE MODULE --- */
+.image-reveal-card {
+  background: #1e293b;
+  border-radius: 32px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: 16px;
+  background: rgba(15, 23, 42, 0.7);
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.no-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #64748b;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.zoom-hint-static {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* --- FULLSCREEN IMAGE MODAL --- */
+.anki-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.anki-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.anki-modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+  object-fit: contain;
+}
+
+.anki-modal-close {
+  position: absolute;
+  top: 24px; right: 32px;
+  color: white; 
+  font-size: 40px; 
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.anki-modal-close:hover {
+  opacity: 1;
+}
+
+/* --- CONTEXT & IMAGE PANEL --- */
+.context-panel {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.context-panel[open] {
+  padding-bottom: 24px;
+}
+
+.context-summary {
+  padding: 16px;
+  font-weight: 700;
+  color: #475569;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.context-summary::-webkit-details-marker {
+  display: none;
+}
+
+.context-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.context-content {
+  padding: 0 16px;
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.image-panel .context-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-panel .image-wrapper {
+  background: #1e293b;
+  padding: 16px;
+  border-radius: 24px;
+  width: 100%;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.context-panel[open] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 600px) {
+  .bento-card { padding: 32px 24px 32px 56px; }
+  .question-content { font-size: 22px; }
+  .interaction-grid { grid-template-columns: 1fr; }
+  .metadata-row { justify-content: center; }
+  .push-right { margin-left: 0; }
+}

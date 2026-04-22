@@ -1,0 +1,1 @@
+../../skills/lecture-ingest.md
