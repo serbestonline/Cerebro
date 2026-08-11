@@ -85,7 +85,7 @@ Matching is semantic, not exact keyword matching.
 Generate supplementary cards **only** for unresolved `high` or `medium` gaps.
 
 **Rules:**
-- Follow all rules from `flashcard-generator.md` (MIP, Cerebro types, 3-tier tags, back minimization)
+- Follow all rules from `flashcard-generator.md` (card architecture, Cerebro types, 3-tier tags, slide figures)
 - Mirror the existing deck's conventions (deck name, tag patterns)
 - For `PARTIALLY COVERED`, generate only the missing angle
 - Do not regenerate already covered topics
@@ -137,5 +137,5 @@ This is a coverage check, not a perfectionist audit.
 - Never critique card quality — this skill checks coverage only
 - Never hallucinate topics not present in source materials
 - Never split every transcript sentence into separate topics
-- Never produce supplementary cards that violate MIP (one idea per card)
+- Never produce supplementary cards with label-style Fronts or bloated Backs (one idea per card)
 - Never skip the cross-lecture concept map when multiple lectures are available

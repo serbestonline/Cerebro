@@ -11,7 +11,7 @@
 
 Cerebro processes your lecture materials (video recordings, transcripts, slides, PDFs) and produces:
 
-- **Flashcards** — Anki-ready TSV files following the Minimum Information Principle. One card = one idea. Backs are minimal, context is collapsible.
+- **Flashcards** — Anki-ready TSV files. One card = one idea: the Front is a clear question, the Back is a compact 1-2 sentence explanation, and slide figures are cropped and embedded in the Front.
 - **Interactive Mindmaps** — Dark-mode HTML files where every flashcard is visible as a Front → Back node pair. Category nodes show context tooltips on hover explaining concept relationships.
 - **Coverage Analysis** — Compares generated flashcards against source materials, identifies gaps, and produces supplementary cards automatically.
 - **Study Guides** — Comprehensive before-starting reports with concept architecture, exam relevance analysis, difficulty forecasts, and study strategies.
@@ -31,7 +31,7 @@ Video/Transcript → Whisper Transcription (skipped if transcript exists)
        ↓
     Lecture Summary (comprehensive narrative overview)
        ↓
-    Flashcard Generation (course-specific skill, MIP-enforced)
+    Flashcard Generation (course-specific skill, question-front architecture)
        ↓
     Coverage Analysis (gap detection + supplementary cards)
        ↓
@@ -97,7 +97,8 @@ Cerebro/
 ├── .gitignore
 │
 ├── skills/                           # Core skills
-│   ├── flashcard-generator.md        # Central rules: MIP, card types, tags, TSV format
+│   ├── flashcard-generator.md        # Central rules: card architecture, types, tags, TSV
+│   ├── slide-figure-extractor.md     # Crop PDF figures into card Fronts
 │   ├── lecture-ingest.md             # 6-step processing pipeline
 │   ├── lecture-summary.md            # Summaries + before-starting reports
 │   ├── flashcard-coverage-checker.md # Gap analysis + supplementary cards
@@ -235,7 +236,7 @@ Card templates (HTML front, back, styling, and field definitions) are in `assets
 
 ### Key Design Principles
 
-**Minimum Information Principle:** Every card tests exactly one idea. Backs are 10-15 words max. Extended explanations go in the collapsible Context field.
+**Card architecture:** Every card tests exactly one idea. The Front is a clear, self-contained question — never a topic label or a statement containing its own answer. The Back is a compact 1-2 sentence explanation (~20-35 words) giving the answer plus the mechanism. Context stays empty unless there is genuine extra material. Where the lecture ships slides, the figure is cropped to its own bounds and embedded in the Front.
 
 **Cloze Overview Pattern:** Lists of 3+ items always produce a Cloze Overview card (big picture with gaps) PLUS individual Basic cards for each item.
 

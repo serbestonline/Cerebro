@@ -1,6 +1,6 @@
 ---
 name: affective-neuro-flashcards
-description: Generate Anki flashcards from Affective and Cognitive Neuroscience lecture materials (AB course, UNIGE). Inherits all card type, MIP, tagging, and format rules from flashcard-generator.md. This file defines only the course-specific scope, exam format, scenario-based practice questions, and content rules.
+description: Generate Anki flashcards from Affective and Cognitive Neuroscience lecture materials (AB course, UNIGE). Inherits all card architecture, card type, tagging, and format rules from flashcard-generator.md. This file defines only the course-specific scope, exam format, scenario-based practice questions, and content rules.
 inherits: ../flashcard-generator.md
 ---
 

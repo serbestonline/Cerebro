@@ -43,7 +43,8 @@ Core skills live in `skills/`:
 
 | Skill | File | Purpose |
 |-------|------|---------|
-| Flashcard Generator | `flashcard-generator.md` | Central card rules (MIP, Cerebro types, tags) — inherited by all course skills |
+| Flashcard Generator | `flashcard-generator.md` | Central card rules (card architecture, Cerebro types, tags) — inherited by all course skills |
+| Slide Figure Extractor | `slide-figure-extractor.md` | Crop figures from lecture PDFs and embed them into card Fronts |
 | Lecture Ingest | `lecture-ingest.md` | Full pipeline: video → transcript → summary → cards → coverage → mindmap |
 | Lecture Summary | `lecture-summary.md` | Comprehensive summary + before-starting report |
 | Coverage Checker | `flashcard-coverage-checker.md` | Gap analysis + supplementary cards |
@@ -120,8 +121,11 @@ Course-specific flashcard skills live in `skills/flashcard-generators/`. Discove
 
 ## Key Principles
 
-### Minimum Information Principle
-All flashcards follow MIP — one card = one idea. Back fields are minimal (10-15 words). Extended explanations go in Context. Lists always get Cloze Overview + individual Basic cards.
+### Card Architecture
+One card = one idea. The Front is always a clear, self-contained question — never a topic label or a statement containing its own answer. The Back is a compact explanation of 1-2 sentences (~20-35 words) giving the answer plus the mechanism behind it — neither telegraphic fragments nor an essay. Context stays empty unless there is genuine extra material (a formula, reference values, a caveat). Lists always get a Cloze Overview plus individual Basic cards.
+
+### Slide Figures
+When a lecture ships a PDF, figures are cropped to the figure region and embedded directly in the card Front via `<img>`, with `#html:true` in the TSV header. Never paste a whole slide, and never attach a figure whose text gives away the answer.
 
 ### Cerebro Card Types
 - `Cerebro Basic` — standard Q&A (Front, Back, Context, Image)
@@ -155,7 +159,7 @@ Each course has its own exam format, content rules, and input materials. Never a
 - Never hardcode course names or skill paths — always discover dynamically
 - Never apply one course's exam rules to another course
 - Never skip the lecture-summary step when ingesting a new lecture
-- Never produce flashcards that violate MIP
+- Never produce a Front that is a topic label, or a Back longer than ~40 words
 - Never test the student without reading their flashcards first
 - Never make exam predictions without reading the course skill's exam format first
 - Never assume a course has a specific exam format — read the skill to find out

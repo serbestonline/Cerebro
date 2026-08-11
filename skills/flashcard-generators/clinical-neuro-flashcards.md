@@ -1,6 +1,6 @@
 ---
 name: clinical-neuro-flashcards
-description: Generate Anki flashcards from Clinical and Cognitive Neuropsychology lecture materials (AD course, UNIGE). Inherits all card type, MIP, tagging, and format rules from flashcard-generator.md. This file defines only the course-specific scope, exam format, and content rules.
+description: Generate Anki flashcards from Clinical and Cognitive Neuropsychology lecture materials (AD course, UNIGE). Inherits all card architecture, card type, tagging, and format rules from flashcard-generator.md. This file defines only the course-specific scope, exam format, and content rules.
 inherits: ../flashcard-generator.md
 ---
 

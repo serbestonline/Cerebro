@@ -1,6 +1,6 @@
 ---
 name: r-programming-flashcards
-description: Generate Anki flashcards from Introduction to Applied Statistics lecture materials (AA course, UNIGE). Inherits all card type, MIP, tagging, and format rules from flashcard-generator.md. This file defines the course-specific scope, dual-layer input (RMD primary + PPTX/transcript secondary), code card rules, and content targets.
+description: Generate Anki flashcards from Introduction to Applied Statistics lecture materials (AA course, UNIGE). Inherits all card architecture, card type, tagging, and format rules from flashcard-generator.md. This file defines the course-specific scope, dual-layer input (RMD primary + PPTX/transcript secondary), code card rules, and content targets.
 inherits: ../flashcard-generator.md
 ---
 
